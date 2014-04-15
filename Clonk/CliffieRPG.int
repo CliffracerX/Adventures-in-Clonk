@@ -1,16 +1,18 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-PACKAGE_RSC_NAME: C:\Users\Owen\Desktop\cliffierpg\Cliffie's RPG\CliffieRPG_rsc.zip
+WINDOW: verbs.dm
 LAST_COMPILE_VERSION: 504.1234
+PACKAGE_RSC_NAME: C:\Users\Owen\Desktop\cliffierpg\Cliffie's RPG\CliffieRPG_rsc.zip
 PACKAGE_DME_DEMO: 
 PACKAGE_TYPE: 0
 PACKAGE_DME_START: 
 PACKAGE_DME_NAME: C:\Users\Owen\Desktop\cliffierpg\Cliffie's RPG\CliffieRPG_src.zip
+FILE: verbs.dm
 PACKAGE_DME_INFO: 
-PACKAGE_DMB_NAME: C:\Users\Owen\Dropbox\CliffieRPG.zip
-LAST_COMPILE_TIME: 1397591448
-PACKAGE_DMB_INFO: 
+LAST_COMPILE_TIME: 1397594230
+PACKAGE_DMB_NAME: C:\Users\Cliffie\Dropbox\CliffieRPG.zip
 AUTO_FILE_DIR: ON
+PACKAGE_DMB_INFO: 
 */
 // END_INTERNALS
