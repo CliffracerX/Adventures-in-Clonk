@@ -1,0 +1,31 @@
+// DM Environment file for Cliffie's RPG.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "hud.dm"
+#include "main.dm"
+#include "mobs.dm"
+#include "npcs.dm"
+#include "otheritems.dm"
+#include "party system.dm"
+#include "procs.dm"
+#include "replacing.dm"
+#include "saveSystem.dm"
+#include "terrain.dm"
+#include "variables.dm"
+#include "verbs.dm"
+#include "CliffieRPGInterface.dmf"
+#include "KingdomsOfClonk.dmm"
+// END_INCLUDE
+

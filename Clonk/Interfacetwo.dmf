@@ -1,0 +1,452 @@
+macro "macro"
+	elem 
+		name = "CENTER"
+		command = "attack"
+		is-disabled = false
+	elem 
+		name = "CENTER+REP"
+		command = ".center"
+		is-disabled = false
+	elem 
+		name = "SPACE"
+		command = "world-speak"
+		is-disabled = false
+	elem 
+		name = "NORTHEAST+REP"
+		command = ".northeast"
+		is-disabled = false
+	elem 
+		name = "SOUTHEAST+REP"
+		command = ".southeast"
+		is-disabled = false
+	elem 
+		name = "SOUTHWEST+REP"
+		command = ".southwest"
+		is-disabled = false
+	elem 
+		name = "NORTHWEST+REP"
+		command = ".northwest"
+		is-disabled = false
+	elem 
+		name = "WEST+REP"
+		command = ".west"
+		is-disabled = false
+	elem 
+		name = "NORTH+REP"
+		command = ".north"
+		is-disabled = false
+	elem 
+		name = "EAST+REP"
+		command = ".east"
+		is-disabled = false
+	elem 
+		name = "SOUTH+REP"
+		command = ".south"
+		is-disabled = false
+	elem 
+		name = "G"
+		command = "get"
+		is-disabled = false
+	elem 
+		name = "I"
+		command = "Inventory"
+		is-disabled = false
+	elem 
+		name = "L"
+		command = "Skillbook"
+		is-disabled = false
+	elem 
+		name = "M"
+		command = "Map"
+		is-disabled = false
+	elem 
+		name = "P"
+		command = "toggle-party-window"
+		is-disabled = false
+	elem 
+		name = "S"
+		command = "toggle-stats-window"
+		is-disabled = false
+	elem 
+		name = "V"
+		command = "say"
+		is-disabled = false
+	elem 
+		name = "F1"
+		command = "useitem 1"
+		is-disabled = false
+	elem 
+		name = "F2"
+		command = "useitem 2"
+		is-disabled = false
+	elem 
+		name = "F3"
+		command = "useitem 3"
+		is-disabled = false
+	elem 
+		name = "F4"
+		command = "useitem 4"
+		is-disabled = false
+	elem 
+		name = "F5"
+		command = "useitem 5"
+		is-disabled = false
+	elem 
+		name = "F6"
+		command = "useitem 6"
+		is-disabled = false
+	elem 
+		name = "F7"
+		command = "useitem 7"
+		is-disabled = false
+	elem 
+		name = "F8"
+		command = "useitem 8"
+		is-disabled = false
+
+
+menu "menu1"
+	elem 
+		name = "File"
+		command = ""
+		category = ""
+		is-checked = false
+		can-check = false
+		group = ""
+		is-disabled = false
+		saved-params = "is-checked"
+	elem 
+		name = "Options and Messages"
+		command = ".options"
+		category = "File"
+		is-checked = false
+		can-check = false
+		group = ""
+		is-disabled = false
+		saved-params = "is-checked"
+	elem 
+		name = "Screenshot"
+		command = ".screenshot"
+		category = "File"
+		is-checked = false
+		can-check = false
+		group = ""
+		is-disabled = false
+		saved-params = "is-checked"
+	elem 
+		name = "Logout"
+		command = ".logout"
+		category = "File"
+		is-checked = false
+		can-check = false
+		group = ""
+		is-disabled = false
+		saved-params = "is-checked"
+	elem 
+		name = "Quit"
+		command = ".quit"
+		category = "File"
+		is-checked = false
+		can-check = false
+		group = ""
+		is-disabled = false
+		saved-params = "is-checked"
+
+
+window "Partywindow"
+	elem "Partywindow"
+		type = MAIN
+		pos = 281,0
+		size = 366x220
+		anchor1 = none
+		anchor2 = none
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = none
+		drop-zone = false
+		right-click = false
+		saved-params = "pos;size;is-maximized"
+		title = "Party"
+		titlebar = true
+		statusbar = false
+		can-close = true
+		can-minimize = true
+		can-resize = true
+		is-pane = false
+		is-maximized = false
+		image = ""
+		image-mode = stretch
+		keep-aspect = false
+		transparent-color = none
+		alpha = 255
+		macro = ""
+		menu = ""
+	elem "peoplegrid"
+		type = GRID
+		pos = 0,0
+		size = 234x220
+		anchor1 = 0,0
+		anchor2 = 64,100
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = #808080
+		is-visible = true
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = true
+		right-click = false
+		saved-params = ""
+		cells = 2x1
+		current-cell = 1,1
+		show-lines = both
+		small-icons = false
+		enable-http-images = false
+		link-color = #0000ff
+		visited-color = #ff00ff
+		line-color = #c0c0c0
+		style = ""
+		is-list = false
+	elem "create"
+		type = BUTTON
+		pos = 231,0
+		size = 138x30
+		anchor1 = 63,0
+		anchor2 = 100,14
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = true
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Create Party"
+		image = ""
+		command = "makeparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "speak"
+		type = BUTTON
+		pos = 231,79
+		size = 138x30
+		anchor1 = 63,36
+		anchor2 = 100,50
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Party Speak"
+		image = ""
+		command = "chatparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "join"
+		type = BUTTON
+		pos = 231,26
+		size = 138x30
+		anchor1 = 63,12
+		anchor2 = 100,25
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = true
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Join Party"
+		image = ""
+		command = "joinparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "change"
+		type = BUTTON
+		pos = 231,130
+		size = 138x30
+		anchor1 = 63,59
+		anchor2 = 100,73
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Change Leadership"
+		image = ""
+		command = "changeleaderparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "eject"
+		type = BUTTON
+		pos = 231,157
+		size = 138x30
+		anchor1 = 63,72
+		anchor2 = 100,85
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Eject Member"
+		image = ""
+		command = "ejectparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "break"
+		type = BUTTON
+		pos = 231,106
+		size = 138x30
+		anchor1 = 63,48
+		anchor2 = 100,62
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Break Party"
+		image = ""
+		command = "breakparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "leave"
+		type = BUTTON
+		pos = 231,53
+		size = 138x30
+		anchor1 = 63,24
+		anchor2 = 100,38
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Leave Party"
+		image = ""
+		command = "exitparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "invite"
+		type = BUTTON
+		pos = 231,26
+		size = 138x30
+		anchor1 = 63,12
+		anchor2 = 100,25
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Invite Member"
+		image = ""
+		command = "inviteparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+	elem "options"
+		type = BUTTON
+		pos = 231,184
+		size = 138x36
+		anchor1 = 63,84
+		anchor2 = 100,100
+		font-family = ""
+		font-size = 0
+		text-color = #000000
+		background-color = none
+		is-visible = false
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = sunken
+		drop-zone = false
+		right-click = false
+		saved-params = "is-checked"
+		text = "Party Options"
+		image = ""
+		command = "optionsparty"
+		is-flat = false
+		stretch = false
+		is-checked = false
+		group = ""
+		button-type = pushbutton
+
