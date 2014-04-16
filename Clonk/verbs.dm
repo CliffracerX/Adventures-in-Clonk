@@ -41,7 +41,7 @@ mob/verb
 //				for(var/o in usr.overlays)
 //					o="[o]Attack"
 		//flick("[usr.icon_state]Attack",usr)	//this can be used to make the character look like their attacking
-		for(var/mob/player in get_step(usr,usr.dir))	//finds any mobsters in front of the player, to destroy.
+		for(var/mob/player in get_step(usr, usr.dir))	//finds any mobsters in front of the player, to destroy.
 			var/damage = (usr.str*usr.sBoost)-(player.def*player.dBoost)	//a simple damage calculation
 			damage=max(0,damage+rand(-1,1))	//make sure damage isnt negative and varry it a little
 			if(rand(1, (player.def*player.dBoost)-(usr.str*usr.sBoost))==1)
