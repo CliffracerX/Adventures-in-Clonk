@@ -26,6 +26,6 @@
 #include "variables.dm"
 #include "verbs.dm"
 #include "CliffieRPGInterface.dmf"
-#include "KingdomsOfClonk.dmm"
+#include "Map2.dmm"
 // END_INCLUDE
 

@@ -356,7 +356,7 @@ mob
 				if("Member limit")
 					var/x=round(input(src,"How many members would you like to allow?","Changing options",p.limit)as num)
 					if(x<=1)x=2
-					if(x>20)x=20
+					if(x>200)x=200
 					if(x<p.members.len)x=p.members.len
 					p.limit=x
 					p.partyloop("Member limit changed to [x].")

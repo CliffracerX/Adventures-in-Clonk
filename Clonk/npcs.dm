@@ -72,3 +72,22 @@ mob/NPCs
 						//newItem.Move(usr)
 						usr.money-=price
 						usr<<"Item Seller: Come again!"
+	siegeMerchant
+		icon_state="SiegeMerchant"
+		verb
+			shop()
+				set src in oview(1)
+				var/list/itemList=list("items/flags/rflag"=200, "items/flags/oflag"=200, "items/flags/yflag"=200, "items/flags/lflag"=200, "items/flags/gflag"=200, "items/flags/cflag"=200, "items/flags/bflag"=200, "items/flags/pflag"=200, "Nothing"=0)	//The item name and price
+				var/item2Buy=input("What siege weapon or castle-related item do you want?","Siege merchant") as anything in itemList	//they pick an item
+				var/price=itemList[item2Buy]	//this gets the price based on the list
+				if(price)	//if it has no price you cant buy it!
+					if(usr.money<price)
+						usr<<"You need [itemList[item2Buy]] S.  Sadly, you only have [usr.money] S."
+					else
+						usr<<"You buy a [item2Buy]"
+						var/obj/newItem="/obj/[item2Buy]"	//note: this only sells items of the obj/Items/ path
+						newItem=new newItem	//creates the actual object
+						usr.contents+=newItem	//add it to both their contents and Items list
+						//newItem.Move(usr)
+						usr.money-=price
+						usr<<"Item Seller: Come again!"
