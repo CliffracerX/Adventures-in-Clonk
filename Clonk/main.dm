@@ -19,7 +19,7 @@ world
 
 world
 	mob=/mob/player
-	view="24x16"
+	view="32x16"
 
 mob/player
 	step_size = 4
