@@ -2,17 +2,17 @@
 /*
 MAP_ICON_TYPE: 0
 WINDOW: verbs.dm;mobs.dm;items.dmi;npcs.dm;otheritems.dm;mobs.dmi;recoloring.dmi;procs.dm;party system.dm;Map2.dmm;main.dm
-PACKAGE_RSC_NAME: C:\Users\Owen\Desktop\cliffierpg\Cliffie's RPG\CliffieRPG_rsc.zip
 LAST_COMPILE_VERSION: 504.1234
+PACKAGE_RSC_NAME: C:\Users\Owen\Desktop\cliffierpg\Cliffie's RPG\CliffieRPG_rsc.zip
 PACKAGE_DME_DEMO: 
 PACKAGE_TYPE: 0
 PACKAGE_DME_START: 
 PACKAGE_DME_NAME: C:\Users\Owen\Desktop\cliffierpg\Cliffie's RPG\CliffieRPG_src.zip
 FILE: main.dm
 PACKAGE_DME_INFO: 
+LAST_COMPILE_TIME: 1397862051
 PACKAGE_DMB_NAME: C:\Users\Cliffie\Dropbox\CliffieRPG.zip
-LAST_COMPILE_TIME: 1397860162
-PACKAGE_DMB_INFO: 
 AUTO_FILE_DIR: ON
+PACKAGE_DMB_INFO: 
 */
 // END_INTERNALS
