@@ -13,10 +13,10 @@ mob/verb
 		src.saveProc()
 	load()
 		src.loadProc()
-	change_name(name as text)
-		src.name = name
-	change_icon(icon as icon)
-		src.icon = icon
+	//change_name(name as text)
+	//	src.name = name
+	//change_icon(icon as icon)
+		//src.icon = icon
 	musicToggle()
 		if(src.musicEnabled==1)
 			src.musicEnabled=0
