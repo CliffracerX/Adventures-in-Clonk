@@ -77,7 +77,7 @@ mob/NPCs
 		verb
 			shop()
 				set src in oview(1)
-				var/list/itemList=list("items/flags/rflag"=200, "items/flags/oflag"=200, "items/flags/yflag"=200, "items/flags/lflag"=200, "items/flags/gflag"=200, "items/flags/cflag"=200, "items/flags/bflag"=200, "items/flags/pflag"=200, "Nothing"=0)	//The item name and price
+				var/list/itemList=list("items/flags/rflag"=200, "items/flags/oflag"=200, "items/flags/yflag"=200, "items/flags/lflag"=200, "items/flags/gflag"=200, "items/flags/cflag"=200, "items/flags/bflag"=200, "items/flags/pflag"=200, "items/buildables/barricade"=10, "Nothing"=0)	//The item name and price
 				var/item2Buy=input("What siege weapon or castle-related item do you want?","Siege merchant") as anything in itemList	//they pick an item
 				var/price=itemList[item2Buy]	//this gets the price based on the list
 				if(price)	//if it has no price you cant buy it!

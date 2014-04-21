@@ -95,3 +95,18 @@ mob/monster
 					M.loc=locate(5,5,1)
 					M<<"You died.  Aw."
 				//(The DeathCheck proc can be found in the Procedures.dm file)
+mob/buildables
+	barricade
+		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
+		icon='buildables.dmi'
+		icon_state="Barricade"
+		money=0	//the gold you set on a monster will determine how much it gives when you kill it
+		exp=1	//same goes for exp, the amount you set here will determine how much this monster is worth
+		lvl=1	//these next few lines setup the basic stats for the monster
+		maxHP=512	//since these variables are already defined elsewhere you dont need to mark them again here
+		//var/ExtraVariable=0	//but if you wanted to define a new variable just for this monster you could
+		//MaxMP=10
+		str=2
+		def=1
+	New()
+		src.HP=src.maxHP

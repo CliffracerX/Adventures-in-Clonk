@@ -40,7 +40,7 @@ obj/items
 			base_state="rFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -52,7 +52,7 @@ obj/items
 			base_state="oFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -64,7 +64,7 @@ obj/items
 			base_state="yFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -76,7 +76,7 @@ obj/items
 			base_state="lFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -88,7 +88,7 @@ obj/items
 			base_state="gFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -100,7 +100,7 @@ obj/items
 			base_state="cFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -112,7 +112,7 @@ obj/items
 			base_state="bFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
@@ -124,10 +124,23 @@ obj/items
 			base_state="pFlag"
 			verb
 				destroy()
-					usr.HP+=16
+					usr.HP+=64
 					if(usr.HP>usr.maxHP)
 						usr.HP=usr.maxHP
 					usr << "You destroy an enemy flag, and feel re-invigorated for your victory!"
+					del src
+	buildables	//this allows you to create multiple types of shirts
+		//Slot="Shirt"	//make sure you set the slot to match the variables above!
+		//layer=Shirt_Layer	//set its layer to the pre-defined Shirt Layer
+		barricade
+			//def=0.1	//how much defense this will add when equipped
+			icon='buildables.dmi'	//sets the icon for whatever
+			icon_state="Barricade"
+			base_state="Barricade"
+			verb
+				build()
+					new /mob/buildables/barricade(usr.loc)
+					usr << "You build the barricade."
 					del src
 	verb
 		get()

@@ -115,3 +115,19 @@ mob/verb
 						world.SetMedal("EXTERMINAAATE!", usr)
 					del M
 					//zombie<<"You died.  Aw."
+		for(var/mob/buildable in get_step(usr,usr.dir))	//finds any mobsters in front of the player, to destroy.
+			var/damage = (usr.str*usr.sBoost)-(buildable.def*buildable.dBoost)	//a simple damage calculation
+			damage=max(0,damage+rand(-1,1))	//make sure damage isnt negative and varry it a little
+			if(rand(1, (buildable.def*buildable.dBoost)-(usr.str*usr.sBoost))==1)
+				damage+=1
+			if(buildable!=usr)
+				buildable.HP-=damage	//subtract the damage from HP
+				if(damage>0)
+					buildable.showDmg()
+					view(10,buildable) << sound('damage.wav')
+				//mob.damageShow(damage,200,0,0)	//flashes the damage on the screen
+				//flick("[usr.overlays[0].icon_state]Attack",usr.overlays[0])	//this can be used to make the character look like their attacking
+				//flick("[usr.overlays[0].icon_state]Attack",usr.overlays[0])	//this can be used to make the character look like their attacking
+				if(buildable.deathCheck(usr))	//check if you killed the unit
+					del buildable
+					//zombie<<"You died.  Aw."
