@@ -63,7 +63,6 @@ mob/verb
 						world.SetMedal("Slayer", usr)
 					if(usr.kills>5000)
 						world.SetMedal("Vaporizer", usr)
-					partycheck()
 					usr.killsBetweenUpdates+=1
 					if(usr.killsBetweenUpdates>128)
 						world.SetMedal("EXTERMINAAATE!", usr)
@@ -109,7 +108,6 @@ mob/verb
 						world.SetMedal("Slayer", usr)
 					if(usr.kills>5000)
 						world.SetMedal("Vaporizer", usr)
-					partycheck()
 					usr.killsBetweenUpdates+=1
 					if(usr.killsBetweenUpdates>128)
 						world.SetMedal("EXTERMINAAATE!", usr)

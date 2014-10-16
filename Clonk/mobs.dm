@@ -1,10 +1,10 @@
 mob/monster
 	//Class="monster"	//placing a variable here will effect all types of mobs created under it
 	var/mob/target	//this variable will only exist for Monsters, and is by default typed as a mob
-	zombie
+	slime1 //Easy ol' slime.
 		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
 		icon='mobs.dmi'
-		icon_state="Zombie"
+		icon_state="Slime1"
 		money=2	//the gold you set on a monster will determine how much it gives when you kill it
 		exp=1	//same goes for exp, the amount you set here will determine how much this monster is worth
 		lvl=1	//these next few lines setup the basic stats for the monster
@@ -13,10 +13,10 @@ mob/monster
 		//MaxMP=10
 		str=2
 		def=1
-	blackzombie
+	slime2 //A harder slime.
 		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
 		icon='mobs.dmi'
-		icon_state="BlackZombie"
+		icon_state="Slime2"
 		money=6	//the gold you set on a monster will determine how much it gives when you kill it
 		exp=3	//same goes for exp, the amount you set here will determine how much this monster is worth
 		lvl=2	//these next few lines setup the basic stats for the monster
@@ -25,10 +25,10 @@ mob/monster
 		//MaxMP=10
 		str=8
 		def=4
-	redzombie
+	zombie //Hard mob, the weakest zombie.
 		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
 		icon='mobs.dmi'
-		icon_state="RedZombie"
+		icon_state="Zombie"
 		money=10	//the gold you set on a monster will determine how much it gives when you kill it
 		exp=3	//same goes for exp, the amount you set here will determine how much this monster is worth
 		lvl=2	//these next few lines setup the basic stats for the monster
@@ -37,7 +37,7 @@ mob/monster
 		//MaxMP=10
 		str=16
 		def=12
-	dzomb1
+	desertzombie //Decently strong zombie.
 		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
 		icon='mobs.dmi'
 		icon_state="DesertZombie1"
@@ -49,6 +49,30 @@ mob/monster
 		//MaxMP=10
 		str=24
 		def=32
+	redzombie //A miniboss.
+		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
+		icon='mobs.dmi'
+		icon_state="RedZombie1"
+		money=30	//the gold you set on a monster will determine how much it gives when you kill it
+		exp=3	//same goes for exp, the amount you set here will determine how much this monster is worth
+		lvl=15	//these next few lines setup the basic stats for the monster
+		maxHP=150	//since these variables are already defined elsewhere you dont need to mark them again here
+		//var/ExtraVariable=0	//but if you wanted to define a new variable just for this monster you could
+		//MaxMP=10
+		str=30
+		def=40
+	doomzombie //The ultimate mob, this will almost certainly kill you, even if you're level 50.
+		//since the following variables are tabbed in under the Hobgolin, they will only effect this 1 monster
+		icon='mobs.dmi'
+		icon_state="DoomZombie1"
+		money=50	//the gold you set on a monster will determine how much it gives when you kill it
+		exp=3	//same goes for exp, the amount you set here will determine how much this monster is worth
+		lvl=25	//these next few lines setup the basic stats for the monster
+		maxHP=300	//since these variables are already defined elsewhere you dont need to mark them again here
+		//var/ExtraVariable=0	//but if you wanted to define a new variable just for this monster you could
+		//MaxMP=10
+		str=200
+		def=100
 	New()	//this is what happens when a new monster is created
 		src.HP=src.maxHP	//sets the monsters HP and MP to max
 		spawn()
@@ -79,21 +103,21 @@ mob/monster
 							break	//as soon as it finds a target it can stop looking
 	proc/fight()
 		for(var/mob/M in get_step(src,src.dir))	//finds any mobs directly in front of the monster
-			if(M.key)
+			//if(M.key)
 				//flick("[src.icon_state]",src)
-				var/damage=src.str-(M.def*M.dBoost)	//a simple damage calculation
-				damage=max(0,damage+rand(-1,1))	//make sure damage isnt negative and varry it a little
-				if(rand(1, (M.def*M.dBoost)-(src.str*src.sBoost))==1)
-					damage+=1
-				M.HP -= damage	//subtract the damage off the victim's HP
-				if(damage>0)
-					M.showDmg()
-					view(10,M) << sound('damage.wav')
+			var/damage=src.str-(M.def*M.dBoost)	//a simple damage calculation
+			damage=max(0,damage+rand(-1,1))	//make sure damage isnt negative and varry it a little
+			if(rand(1, (M.def*M.dBoost)-(src.str*src.sBoost))==1)
+				damage+=1
+			M.HP -= damage	//subtract the damage off the victim's HP
+			if(damage>0)
+				M.showDmg()
+				view(10,M) << sound('damage.wav')
 				//M.DamageShow(damage,200,0,0)	//flashes the damage on the screen
-				if(M.deathCheck(src))	//runs the DeathCheck proc on the victim of the attack
-					M.HP=M.maxHP
-					M.loc=locate(5,5,1)
-					M<<"You died.  Aw."
+			if(M.deathCheck(src))	//runs the DeathCheck proc on the victim of the attack
+				M.HP=M.maxHP
+				M.loc=locate(5,5,1)
+				M<<"You died.  Aw."
 				//(The DeathCheck proc can be found in the Procedures.dm file)
 mob/buildables
 	barricade
